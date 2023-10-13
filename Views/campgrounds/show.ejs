@@ -1,0 +1,18 @@
+<% layout('/layouts/boilerplate') %>
+
+    <h1><%= campground.title%></h1>
+    <h2><%= campground.location%></h2>
+    <img src="<%= campground.image%>" class="card-img-top" alt="...">
+    <p><%= campground.description%></p>
+
+    <p><a href="/campgrounds/<%= campground._id %>/edit">Edit</a></p>
+    <p>
+      <li class="list-group-item"><%= campground.price %>/night</li>
+        <form action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
+            <button>Delete</button>
+        </form>
+    </p>
+    <footer>
+      <a href="/campgrounds">Back To All Campgrounds</a>
+    </footer>
+
